@@ -7,6 +7,8 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+const port = process.env.PORT || 4000;
+
 mongoose.connect('mongodb://127.0.0.1:27017/test');
 
 app.get('/get', (req, res) => {
@@ -45,6 +47,6 @@ app.delete('/delete/:id', (req, res) => {
     .catch(error => res.json(error))
 })
 
-app.listen(3001, () => {
+app.listen(port, () => {
     console.log('Server is running!');
 })
