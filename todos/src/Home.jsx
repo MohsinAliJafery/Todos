@@ -10,13 +10,13 @@ const Home = () => {
   const [todos, setTodos] = useState([])
 
   useEffect(() => {
-    axios.get('http://localhost:3001/get')
+    axios.get('https://todos-application-react-js.onrender.com/get')
     .then(result => setTodos(result.data))
     .catch(error => console.log(error))
   }, [])
 
   const handleEdit = (id) => {
-    axios.put('http://localhost:3001/update/' +id )
+    axios.put('https://todos-application-react-js.onrender.com' +id )
     .then(result => {
       console.log(result)
       location.reload();
@@ -25,7 +25,7 @@ const Home = () => {
   }
 
   const handleDelete = (id) => {
-    axios.delete('http://localhost:3001/delete/' + id )
+    axios.delete('https://todos-application-react-js.onrender.com/delete/' + id )
     .then(result =>  {
       console.log(result)
       location.reload();
