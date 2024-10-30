@@ -6,7 +6,7 @@ const Create = () => {
 
     const [task, setTask] = useState();
     const handleAdd = () => {
-        axios.post('http://localhost:3001/add', {task: task})
+        axios.post('https://todos-application-react-js.onrender.com/add', {task: task})
         .then(result => {
           console.log(result);
           location.reload();
